@@ -64,3 +64,21 @@ return acc;
 }, {});
 
 console.log(experienceByProffession);
+
+let namesByProfession = teamMembers.reduce((acc, curr) => {
+  let key = curr.profession;
+  if (!acc[key]) {
+    acc[key] = [];
+  }
+  acc[key].push(curr.name);
+  return acc;
+}, {});
+
+console.log(namesByProfession);
+
+const namesByProfessionArray = Object.entries(namesByProfession).map(([profession, names]) => ({
+  profession,
+  names
+}));
+
+console.log(namesByProfessionArray);
